@@ -1,0 +1,32 @@
+{
+  "name": "easy-mock-template-axios",
+  "version": "0.1.0",
+  "description": "基于 axios 的接口定义模板",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && webpack --config example/webpack.conf.js --progress --hide-modules",
+    "server": "serve ./dist -p 3333",
+    "create-api": "easymock init example",
+    "dev": "npm run create-api && npm run build"
+  },
+  "author": "Chuangker",
+  "license": "MIT",
+  "keywords": [
+    "easy-mock",
+    "mock"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easy-mock-templates/axios.git"
+  },
+  "devDependencies": {
+    "axios": "^0.16.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "easy-mock-cli": "^0.1.2",
+    "html-webpack-plugin": "^2.28.0",
+    "rimraf": "^2.6.1",
+    "serve": "^5.1.5",
+    "webpack": "^2.5.1"
+  }
+}
