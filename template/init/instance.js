@@ -2,7 +2,7 @@ import { createAPI } from '<%- $$.relative("util") %>';
 import config from '<%- $$.relative("config") %>';
 
 const baseUrl = {
-  mock: 'https://www.easy-mock.com/mock/<%- data.project._id %><%- data.project.url %>',
+  mock: '<%- $$.joinUrl(config.host, "mock", data.project._id, data.project.url) %>',
   dev: '',
   pre: '',
   prod: ''
