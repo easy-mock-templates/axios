@@ -1,6 +1,6 @@
 {
   "name": "easy-mock-template-axios",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "基于 axios 的接口定义模板",
   "main": "index.js",
   "scripts": {
