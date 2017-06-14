@@ -1,7 +1,7 @@
-const convertUrl = exports.convertUrl = function (url) {
+var convertUrl = exports.convertUrl = function (url) {
   // /restful/:id/:list/{id} -> restful_id_list_id
   // /restful/:id/:list/{id}.json -> restful_id_list_id
-  const _url = url
+  var _url = url
     .replace(/:|{|}/g, '')
     .split('/')
     .filter(value => !!value).join('_');
@@ -18,7 +18,7 @@ exports.convertMethod = function (mock) {
 
 exports.joinUrl = function () {
   // https://www.easy-mock.com//mock/.... => https://www.easy-mock.com/mock/....
-  let url = [].slice.call(arguments, 0).join('/');
+  var url = [].slice.call(arguments, 0).join('/');
   url = url.replace(/:\//g, '://');
   url = url.replace(/([^:\s\%\3\A])\/+/g, '$1/');
   return url;
