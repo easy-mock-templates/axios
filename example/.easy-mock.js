@@ -3,7 +3,7 @@ module.exports = {
   template: "../",
   projects: [
     {
-      id: "58fef6ac5e43ae5dbea5eb53",
+      id: "59ad3b0be0dc6633419c12ab",
       name: "demo"
     }
   ]

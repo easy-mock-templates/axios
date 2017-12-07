@@ -1,5 +1,5 @@
-import * as demo from './demo';
+import * as demo from './demo'
 
 export {
   demo
-};
+}
