@@ -1,11 +1,5 @@
-import { createAPI } from '{{$$.relative("util")}}';
-import config from '{{$$.relative("config")}}';
+import { createAPI } from '{{$$.relative("util")}}'
 
-const baseUrl = {
-  mock: '{{$$.joinUrl(config.host, "mock", data.project._id, data.project.url)}}',
-  dev: '',
-  pre: '',
-  prod: ''
-}[config.env || 'mock'];
+const baseUrl = baseURL
 
-export default createAPI(baseUrl);
+export default createAPI(baseUrl)

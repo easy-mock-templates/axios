@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/macos
 
 dist
-
+.idea/
 ### macOS ###
 *.DS_Store
 .AppleDouble
