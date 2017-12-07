@@ -14,7 +14,7 @@ exports.convertMethod = function (mock) {
   // restful_id_list_id => restful_id_list_id_g
   // or
   // restful_id_list_id => restful_id_list_id_p
-  return convertUrl(mock.url) + '-' + mock.method.toLowerCase()
+  return (convertUrl(mock.url) + '-' + mock.method.toLowerCase())
     .replace(/-(\w)/g, function ($0, $1) {
       return $1.toUpperCase()
     });

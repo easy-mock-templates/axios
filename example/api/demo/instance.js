@@ -1,11 +1,5 @@
-import { createAPI } from '../util';
-import config from '../config';
+import { createAPI } from '../util'
 
-const baseUrl = {
-  mock: 'https://www.easy-mock.com/mock/58fef6ac5e43ae5dbea5eb53/example',
-  dev: '',
-  pre: '',
-  prod: ''
-}[config.env || 'mock'];
+const baseUrl = baseURL
 
-export default createAPI(baseUrl);
+export default createAPI(baseUrl)
