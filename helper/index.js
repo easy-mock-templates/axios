@@ -1,11 +1,12 @@
 var convertUrl = exports.convertUrl = function (url) {
   // /restful/:id/:list/{id} -> restful_id_list_id
   // /restful/:id/:list/{id}.json -> restful_id_list_id
-  var _url = url
+  return url
     .replace(/:|{|}/g, '')
     .split('/')
-    .filter(value => !!value).join('_');
-  return _url.split('.')[0];
+    .filter(value => !!value)
+    .join('-')
+    .split('.')[0]
 };
 
 exports.convertMethod = function (mock) {
@@ -13,7 +14,10 @@ exports.convertMethod = function (mock) {
   // restful_id_list_id => restful_id_list_id_g
   // or
   // restful_id_list_id => restful_id_list_id_p
-  return convertUrl(mock.url) + '_' + mock.method.toLowerCase();
+  return convertUrl(mock.url) + '-' + mock.method.toLowerCase()
+    .replace(/-(\w)/g, function ($0, $1) {
+      return $1.toUpperCase()
+    });
 };
 
 exports.joinUrl = function () {
