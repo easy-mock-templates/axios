@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const instance = axios.create()
 
-function createAPI(baseURL) {
+function createAPI (baseURL) {
   return async function (conf) {
     conf = conf || {}
 
@@ -13,7 +13,7 @@ function createAPI(baseURL) {
         method: conf.method
       }, conf.opts))
       const {statusText, status} = response
-      const data = options.fetchType === 'YQL' ? response.data.query.results.json : response.data
+      const data = response.data
       return Object.assign({}, {
         message: statusText,
         status
@@ -42,7 +42,7 @@ function createAPI(baseURL) {
   }
 }
 
-function convertRESTAPI(url, opts) {
+function convertRESTAPI (url, opts) {
   if (!opts || !opts.path) return url
 
   const pathKeys = Object.keys(opts.path)
@@ -58,4 +58,4 @@ function convertRESTAPI(url, opts) {
 export {
   createAPI,
   convertRESTAPI
-};
+}
