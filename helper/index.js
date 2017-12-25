@@ -3,6 +3,7 @@ var convertUrl = exports.convertUrl = function (url) {
   // /restful/:id/:list/{id}.json -> restful_id_list_id
   var _url = url
     .replace(/:|{|}/g, '')
+    .replace(/-/g, '_')
     .split('/')
     .filter(value => !!value).join('_');
   return _url.split('.')[0];
