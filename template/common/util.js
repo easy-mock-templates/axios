@@ -42,8 +42,6 @@ function ejectResponseInterceptor(interceptor) {
   instance.interceptors.response.eject(interceptor);
 }
 
-interceptors.request.eject(myInterceptor);
-
 function mergeDefaults(defaults) {
   return instance.defaults = {...instance.defaults, ...defaults}
 }
