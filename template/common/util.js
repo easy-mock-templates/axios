@@ -26,7 +26,34 @@ function convertRESTAPI(url, opts) {
   return url;
 }
 
+function useRequestInterceptor(interceptor) {
+  return instance.interceptors.request.use(interceptor);
+}
+
+function useResponseInterceptor(interceptor) {
+  return instance.interceptors.response.use(interceptor);
+}
+
+function ejectRequestInterceptor(interceptor) {
+  instance.interceptors.request.eject(interceptor);
+}
+
+function ejectResponseInterceptor(interceptor) {
+  instance.interceptors.response.eject(interceptor);
+}
+
+interceptors.request.eject(myInterceptor);
+
+function mergeDefaults(defaults) {
+  return instance.defaults = {...instance.defaults, ...defaults}
+}
+
 export {
   createAPI,
-  convertRESTAPI
+  convertRESTAPI,
+  useRequestInterceptor,
+  useResponseInterceptor,
+  ejectRequestInterceptor,
+  ejectResponseInterceptor,
+  mergeDefaults
 };
